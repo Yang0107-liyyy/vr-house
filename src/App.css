@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+}
+
+.tooltip-box {
+  position: absolute;
+  padding: 0px 0px 40px 0px;
+  line-height: 30px;
+  border-radius: 4px;
+  color: #fff;
+  z-index: 100;
+  cursor: pointer;
+}
+
+.tooltip-box .wrapper {
+  position: relative;
+  width: 240px;
+  max-height: 200px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.tooltip-box .wrapper .name {
+  width: 100%;
+  padding: 6px 0;
+}
+
+.tooltip-box .wrapper .description {
+  width: 100%;
+  max-height: 100px;
+  font-size: 14px;
+  overflow-y: auto;
+}
