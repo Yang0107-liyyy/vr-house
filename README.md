@@ -1,73 +1,65 @@
-# React + TypeScript + Vite
+<h2 align="center">
+VR 看房项目
+</h2>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📰 介绍
 
-Currently, two official plugins are available:
+该项目是基于 React + Three.js 构建的 3D 虚拟现实看房，提供沉浸式的房间浏览体验。
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🎊 功能特点
 
-## React Compiler
+- **3D场景漫游** ：360度全景查看客厅、阳台、厨房
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **智能导航** ：点击位置标识在不同房间间切换
 
-## Expanding the ESLint configuration
+- **交互提示** ：鼠标悬停显示物品详细信息
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **视角控制** ：鼠标拖拽自由调整观看角度
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **平滑动画** ：使用 GSAP 实现流畅的场景切换
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🔧 技术栈
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- **前端框架**: React + TypeScript
+
+- **3D引擎**: Three.js
+
+- **动画库**: GSAP
+
+- **构建工具**: Vite
+
+## 🏗️ 项目结构
+
+```bash
+├── public/                    # 静态资源
+├── src/ 
+│   ├── utils/                 # 工具类
+│   │   ├── Room.ts            # 房间 3D 场景类
+│   │   ├── PositionSprite.ts  # 位置导航精灵
+│   │   └── TooltipSprite.ts   # 信息提示精灵
+│   ├── App.tsx                # 主组件
+│   ├── App.css                # 样式文件
+│   ├── main.tsx               # 应用入口
+└── package.json               # 项目依赖
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🚀 快速开始
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+git clone https://github.com/Yang0107-liyyy/vr-house.git
+cd vr-house
+pnpm install
+pnpm run dev
 ```
+
+### 构建
+
+```bash
+pnpm run build
+```
+
+## 📸 效果预览
+
+![alt text](public/images/rendering/VR1.gif)
+
+![alt text](public/images/rendering/VR2.gif)
